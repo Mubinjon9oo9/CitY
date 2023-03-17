@@ -1,5 +1,7 @@
 package CollectionData;
 
+import java.util.Locale;
+
 /**
  * Класс для правителя/мера
  */
@@ -16,6 +18,10 @@ public class Human {
 
     @Override
     public String toString() {
-        return name+"\t";
+        String ta = "\t";
+        if (name.equals(name.toLowerCase(Locale.ROOT))){
+            ta = "\t\t";
+        }
+        return name+ta;
     }
 }

@@ -1,5 +1,7 @@
 package CollectionData;
 
+import InteractiveEditing.OUTofLimitExceptions;
+
 /**
  * Класс получения координат
  */
@@ -19,9 +21,12 @@ public class Coordinates {
     public Long getY() {
         return y;
     }
-
     @Override
     public String toString() {
-        return x + "\t" + y +"\t";
+        String tx = "\t";
+        if (x<10){
+            tx = "\t\t";
+        }
+        return x + tx + y +"\t";
     }
 }

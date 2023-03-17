@@ -8,5 +8,6 @@ public enum Government {
     COMMUNISM,
     PUPPET_STATE,
     TOTALITARIANISM,
-    JUNTA
+    JUNTA;
 }
+

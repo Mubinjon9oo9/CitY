@@ -69,7 +69,7 @@ public class City {
         if (this.area <= 0) {
             throw new OUTofLimitExceptions("Area - Out of limit");
         }
-        if (this.population <= 0 || this.population == null) {
+        if (this.population <= 0) {
             throw new OUTofLimitExceptions("Population - Out of limit");
         }
         if (this.timezone < -13 || this.timezone > 15) {
@@ -136,19 +136,27 @@ public class City {
         String timez="\t\t\t\t\t";
         String governm="\t\t";
         String car="\t\t\t";
+        String are="\t\t";
+        String pop="\t\t";
+        if (population<100){
+            pop = "\t\t\t";
+        }
+        if (area<10){
+            are = "\t\t\t";
+        }
         if (metersAboveSeaLevel<10 && metersAboveSeaLevel>=0){
             timez="\t\t\t\t\t\t";
-            car="\t\t";
         }
-        if (timezone>=10 || timezone <=-10) {
+        if (timezone>=10 || timezone <0) {
             car="\t\t";
         }
         if (government==Government.NULL){
             governm="\t";
         }
         return id + "\t\t" + name + "\t\t" + coordinates + "\t\t"+ creationDate + "\t\t" +
-                area + "\t\t" + population + "\t\t" + metersAboveSeaLevel + timez + timezone + car +
+                area + are + population + pop + metersAboveSeaLevel + timez + timezone + car +
                 carCode+ "\t\t\t" + governor  + governm  + government;
     }
+
 }
 

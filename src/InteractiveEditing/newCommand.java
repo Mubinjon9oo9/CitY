@@ -6,6 +6,11 @@ import java.util.Scanner;
  */
 public class newCommand {
     public String command;
+
+    /**
+     * Получение команды пользователя
+     * @return command
+     */
     public String getCommand() {
         System.out.print("\ninput new command$ ");
         Scanner scan = new Scanner(System.in);
