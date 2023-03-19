@@ -1,10 +1,5 @@
 package Commands;
 
-import CollectionData.City;
-import Server.Connection;
-
-import java.util.HashSet;
-
 public class REMOVE_BY_ID{
 
     public REMOVE_BY_ID(String [] command, boolean check) {

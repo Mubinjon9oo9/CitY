@@ -1,0 +1,14 @@
+help
+info
+show
+save
+add
+update
+remove_by_id 3
+clear
+add_if_max
+remove_greater
+history
+min_by_government
+print_field_ascending_governor
+print_field_descending_governor

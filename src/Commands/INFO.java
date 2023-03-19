@@ -1,8 +1,6 @@
 package Commands;
 
 import CollectionData.City;
-import Server.Connection;
-
 import java.util.HashSet;
 
 public class INFO{

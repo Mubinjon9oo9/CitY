@@ -1,7 +1,4 @@
 package CollectionData;
-
-import InteractiveEditing.OUTofLimitExceptions;
-
 /**
  * Класс получения координат
  */

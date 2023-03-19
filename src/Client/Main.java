@@ -5,14 +5,14 @@ import java.net.DatagramPacket;
 import java.net.DatagramSocket;
 import java.net.InetAddress;
 import java.util.Scanner;
-
+/** Класс для взаимодейтсвия пользователя и сервера*/
 public class Main{
-    /* Порт сервера, к которому собирается
+    /** Порт сервера, к которому собирается
   подключиться клиентский сокет */
     public final static int SERVICE_PORT = 50003;
     public static int sending_errors= 0, num=0;
     public static boolean exit = true;
-
+    /** Главный метод взаимодейтсвующий с пользователем*/
     public static void main(String[] args) throws IOException{
         Scanner scan = new Scanner(System.in);
         while (exit){
@@ -33,6 +33,12 @@ public class Main{
             }
         }
     }
+
+    /** Метод отправляющий данные на сервер
+     *
+     * @param data (String)
+     * @return sending (boolean)
+     */
     public static boolean send (String data){
         boolean sending = true;
         if (sending_errors>=10){
@@ -59,6 +65,10 @@ public class Main{
         return sending;
     }
 
+    /** Класс для получения данных от сервера
+     * Класс получает данные, обрабатывает и возвращает в качестве текста для вывода пользователю.
+     * @return receivedData (String)
+     */
     public static String receive () {
         String receivedData = "Data is corrupted";
         try{

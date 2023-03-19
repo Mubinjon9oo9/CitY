@@ -1,13 +1,5 @@
 package Commands;
 
-import CollectionData.City;
-import CollectionData.Coordinates;
-import CollectionData.Government;
-import CollectionData.Human;
-import InteractiveEditing.OUTofLimitExceptions;
-
-import java.util.HashSet;
-
 public class UPDATE{
 
     public UPDATE(String [] com, boolean check) {

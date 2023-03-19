@@ -70,7 +70,7 @@ public class Sample {
         }
     }
     public void Send_Out(String outs, boolean check){
-        if (check==false){
+        if (!check){
             System.out.println(outs);
         } else{
             Connection conn = new Connection();

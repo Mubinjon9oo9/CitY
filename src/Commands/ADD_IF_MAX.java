@@ -5,8 +5,6 @@ import CollectionData.Coordinates;
 import CollectionData.Government;
 import CollectionData.Human;
 import InteractiveEditing.OUTofLimitExceptions;
-import Server.Connection;
-
 import java.util.HashSet;
 
 public class ADD_IF_MAX{

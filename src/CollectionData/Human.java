@@ -1,7 +1,6 @@
 package CollectionData;
 
 import java.util.Locale;
-
 /**
  * Класс для правителя/мера
  */

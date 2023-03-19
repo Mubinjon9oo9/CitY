@@ -1,7 +1,5 @@
 package Commands;
 
-
-
 public class HELP{
 
     public HELP(boolean check) {

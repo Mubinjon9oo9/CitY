@@ -1,8 +1,6 @@
 package Commands;
 
 import CollectionData.City;
-import Server.Connection;
-
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.HashSet;

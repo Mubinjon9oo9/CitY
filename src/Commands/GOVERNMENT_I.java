@@ -2,8 +2,6 @@ package Commands;
 
 import CollectionData.City;
 import CollectionData.SortByName;
-import Server.Connection;
-
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashSet;

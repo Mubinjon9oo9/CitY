@@ -5,7 +5,6 @@ import CollectionData.Coordinates;
 import CollectionData.Government;
 import CollectionData.Human;
 import InteractiveEditing.OUTofLimitExceptions;
-
 import java.sql.DriverManager;
 import java.sql.Connection;
 import java.sql.SQLException;

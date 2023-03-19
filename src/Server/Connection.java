@@ -11,9 +11,6 @@ public class Connection{
     int sender_port,sending_errors=0;
     InetAddress sender_addr;
     public boolean exit = true;
-    public Connection(boolean b) {
-        exit=b;
-    }
     public Connection(){
 
     }

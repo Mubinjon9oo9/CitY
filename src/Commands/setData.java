@@ -1,12 +1,8 @@
 package Commands;
 
 import CollectionData.City;
-import CollectionData.Coordinates;
 import CollectionData.Government;
-import CollectionData.Human;
-import InteractiveEditing.OUTofLimitExceptions;
 import org.postgresql.util.PSQLException;
-
 import java.sql.*;
 import java.time.LocalDate;
 import java.util.HashSet;

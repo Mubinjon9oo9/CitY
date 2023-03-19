@@ -1,7 +1,6 @@
 package CollectionData;
 
 import java.util.Comparator;
-import java.util.function.ToIntFunction;
 /**
  * Класс сортировки по ENUM
  */

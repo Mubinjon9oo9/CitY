@@ -5,12 +5,12 @@ import CollectionData.Coordinates;
 import CollectionData.Government;
 import CollectionData.Human;
 import InteractiveEditing.OUTofLimitExceptions;
-import Server.Connection;
-
 import java.time.LocalDate;
 import java.util.HashSet;
 
-
+/**
+ * Класс для выполнения команды ADD
+ */
 public class ADD{
 
     public ADD(boolean check) {

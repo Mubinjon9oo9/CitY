@@ -1,14 +1,11 @@
 package Server;
 
-import java.io.FileNotFoundException;
-import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.net.InetAddress;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.util.Optional;
-import java.util.Scanner;
 
 public class SavePort {
     public void setDATA(int senderPort, InetAddress senderAdrr){
