@@ -7,6 +7,7 @@ public class Manage extends Thread{
     public void run(){
         Sample s = new Sample();
         Connection conn = new Connection();
+        conn.getCurrentIP();
         while (conn.exit){
             System.out.println("Waiting for a client to connect...");
             s.Sampling(conn.receive(),true);

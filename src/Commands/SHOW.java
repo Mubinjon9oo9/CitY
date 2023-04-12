@@ -12,8 +12,7 @@ public class SHOW{
         Sample s = new Sample();
         getData g = new getData();
         ArrayList<City> list = new ArrayList<>(g.cities);
-        Collections.sort(list, new SortByID());
-        Collections.sort(list, new SortByName());
+        list.sort(new SortByID());
         s.Send_Out("id\t\tname\t\tcoordinates x&y\t\tcreationDate\tarea\t\tpopulation\tmetersAboveSeaLevel\t\ttimezone\tcarCode\t\tgovernor\t\tgovernment|W|", check);
         for (City city : list) {
             s.Send_Out(city.toString()+"|W|",check);

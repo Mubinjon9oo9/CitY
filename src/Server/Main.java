@@ -1,5 +1,4 @@
 package Server;
-
 import Commands.Sample;
 
 import java.util.Locale;
@@ -20,6 +19,9 @@ public class Main{
         while (exit){
             System.out.print("Input COMMAND: ");
             String command = scan.nextLine();
+            if (command.strip().toUpperCase(Locale.ROOT).contains("EXIT")){
+                break;
+            }
             new Sample().Sampling(command,false);
         }
 

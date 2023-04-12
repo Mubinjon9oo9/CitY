@@ -1,12 +1,14 @@
 package Commands;
 
-import CollectionData.City;
-
-import java.util.HashSet;
+import Server.Connection;
 
 public class EXECUTE_SCRIPT{
 
-    public String EXECUTE_SCRIPT(HashSet<City> cities) {
-        return null;
+    public EXECUTE_SCRIPT(boolean check) {
+        String all = new Connection().receive();
+        System.out.println(all);
+        //for (String a:all){
+          //  System.out.println(a);
+        //}
     }
 }

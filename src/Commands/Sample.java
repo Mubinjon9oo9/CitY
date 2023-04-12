@@ -30,11 +30,9 @@ public class Sample {
                 case "CLEAR":
                 new CLEAR(check);
                 break;
-                /*
             case "EXECUTE_SCRIPT":
-                new EXECUTE_SCRIPT();
+                new EXECUTE_SCRIPT(check);
                 break;
-                */
             case "GOVERNMENT_D":
                 new GOVERNMENT_D(check);
                 break;

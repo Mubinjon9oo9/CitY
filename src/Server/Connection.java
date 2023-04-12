@@ -1,16 +1,21 @@
 package Server;
 
+import Commands.Sample;
+
+import java.io.BufferedReader;
 import java.io.IOException;
-import java.net.DatagramPacket;
-import java.net.DatagramSocket;
-import java.net.InetAddress;
+import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.net.*;
 
 
 public class Connection{
-    public final int SERVICE_PORT=50003;
     int sender_port,sending_errors=0;
     InetAddress sender_addr;
     public boolean exit = true;
+    public Connection(boolean b) {
+        exit=b;
+    }
     public Connection(){
 
     }
@@ -23,7 +28,7 @@ public class Connection{
             return false;
         }
         try{
-            DatagramSocket serverSocket = new DatagramSocket(SERVICE_PORT);
+            DatagramSocket serverSocket = new DatagramSocket(2222);
             byte[] sendingDataBuffer;
             sendingDataBuffer = data.getBytes();
             SavePort s = new SavePort();
@@ -41,11 +46,10 @@ public class Connection{
         return sending;
     }
 
-    
     public String receive () {
         String receivedData = "Data is corrupted";
         try{
-            DatagramSocket serverSocket = new DatagramSocket(SERVICE_PORT);
+            DatagramSocket serverSocket = new DatagramSocket(2222);
             byte[] receivingDataBuffer = new byte[1024];
             DatagramPacket inputPacket = new DatagramPacket(receivingDataBuffer, receivingDataBuffer.length);
             serverSocket.receive(inputPacket);
@@ -58,7 +62,8 @@ public class Connection{
             if (receivedData.equals("exit")) {
                 exit = false;
                 serverSocket.close();
-                return "Thank you";
+                send("Thank you");
+                return "exit";
             }
             System.out.println("Received data: " + receivedData);
             serverSocket.close();
@@ -67,4 +72,46 @@ public class Connection{
         }
         return receivedData;
     }
+    public String getCurrentIP() {
+        String result = null;
+        try {
+            BufferedReader reader = null;
+            try {
+                URL url = new URL("http://myip.by/");
+                InputStream inputStream = null;
+                inputStream = url.openStream();
+                reader = new BufferedReader(new InputStreamReader(inputStream));
+                StringBuilder allText = new StringBuilder();
+                char[] buff = new char[1024];
+                int count = 0;
+                while ((count = reader.read(buff)) != -1) {
+                    allText.append(buff, 0, count);
+                }
+                Integer indStart = allText.indexOf("\">whois ");
+                Integer indEnd = allText.indexOf("</a>", indStart);
+
+                String ipAddress = new String(allText.substring(indStart + 8, indEnd));
+                if (ipAddress.split("\\.").length == 4) { // минимальная (неполная)
+                    //проверка что выбранный текст является ip адресом.
+                    result = ipAddress;
+                }
+            } catch (MalformedURLException ex) {
+                ex.printStackTrace();
+            } catch (IOException ex) {
+                ex.printStackTrace();
+            } finally {
+                if (reader != null) {
+                    try {
+                        reader.close();
+                    } catch (Exception ex) {
+                        ex.printStackTrace();
+                    }
+                }
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+        return result;
+}
 }
